@@ -1,0 +1,44 @@
+# -------------------------------------------------------------------------------------------------
+# Backpack settings
+# size - The size of the backpack. Changing this to smaller values will corrupt bigger backpacks.
+# craftable - If the backpack can be crafted.
+# -------------------------------------------------------------------------------------------------
+Backpacks:
+  size: 6 * 9
+  craftable: true
+
+# -------------------------------------------------------------------------------------------------
+# The prefix used in front of most chat or console messages.
+# -------------------------------------------------------------------------------------------------
+Prefix: "&c&liBackPacks&8>>"
+
+# -------------------------------------------------------------------------------------------------
+# The formats used in the plugin. For help with timestamp, see:
+# https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html
+# -------------------------------------------------------------------------------------------------
+Timestamp_Format: "dd.MM.yyyy HH:mm:ss"
+Location_Format: "{world} [{x}, {y}, {z}]"
+
+# -------------------------------------------------------------------------------------------------
+# What commands should trigger the main plugin command?
+#
+# * DO NOT LEAVE EMPTY *
+# -------------------------------------------------------------------------------------------------
+Command_Aliases: [backpack, bp]
+
+# -------------------------------------------------------------------------------------------------
+# What language should we use for messages? You can add your own language files in the /localization folder.
+# -------------------------------------------------------------------------------------------------
+Locale: en
+
+# -------------------------------------------------------------------------------------------------
+# Time of some plugin's operations is measured.
+# We log a console message if an operation takes over the time below (milliseconds).
+# Set to -1 to disable.
+# -------------------------------------------------------------------------------------------------
+Log_Lag_Over_Milis: 100
+
+# -------------------------------------------------------------------------------------------------
+# Do not change this value, otherwise it will corrupt your plugin installation!
+# -------------------------------------------------------------------------------------------------
+Version: 1
