@@ -1,0 +1,52 @@
+{
+	"providers": [{
+			"type": "bitmap",
+			"file": "minecraft:guis/pixel.png",
+			"ascent": -2000,
+			"height": -3,
+			"chars": ["ϰ"]
+		},
+		{
+			"type": "bitmap",
+			"file": "minecraft:guis/backpack/54.png",
+			"ascent": 26,
+			"height": 140,
+			"chars": ["鸷"]
+		},
+		{
+			"type": "bitmap",
+			"file": "minecraft:guis/backpack/45.png",
+			"ascent": 26,
+			"height": 121,
+			"chars": ["幔"]
+		},
+		{
+			"type": "bitmap",
+			"file": "minecraft:guis/backpack/36.png",
+			"ascent": 26,
+			"height": 103,
+			"chars": ["挚"]
+		},
+		{
+			"type": "bitmap",
+			"file": "minecraft:guis/backpack/27.png",
+			"ascent": 26,
+			"height": 85,
+			"chars": ["抬"]
+		},
+		{
+			"type": "bitmap",
+			"file": "minecraft:guis/backpack/18.png",
+			"ascent": 26,
+			"height": 67,
+			"chars": ["撼"]
+		},
+		{
+			"type": "bitmap",
+			"file": "minecraft:guis/backpack/9.png",
+			"ascent": 26,
+			"height": 49,
+			"chars": ["护"]
+		}
+	]
+}

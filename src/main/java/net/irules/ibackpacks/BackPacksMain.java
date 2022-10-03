@@ -42,4 +42,9 @@ public final class BackPacksMain extends SimplePlugin {
 	public static BackPacksMain getInstance() {
 		return (BackPacksMain) SimplePlugin.getInstance();
 	}
+
+	@Override
+	public int getMetricsPluginId() {
+		return 16564;
+	}
 }
