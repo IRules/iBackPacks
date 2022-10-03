@@ -1,13 +1,11 @@
 package net.irules.ibackpacks.menu;
 
-import net.irules.ibackpacks.model.BackpackItem;
-import net.irules.ibackpacks.settings.BackpackData;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.persistence.PersistentDataType;
 import org.mineacademy.fo.menu.Menu;
 import org.mineacademy.fo.menu.model.MenuClickLocation;
+import org.mineacademy.fo.settings.Lang;
 
 import javax.annotation.Nullable;
 
@@ -16,8 +14,8 @@ public final class BackpackInspectMenu extends Menu {
 	private final Inventory backPackInventory;
 
 	public BackpackInspectMenu(Inventory inventory) {
-		setTitle("&e&lBackpack &c&lInspector");
-		setSize(9 * 6);
+		setTitle(Lang.of("Backpack.itemName") + " - &c&lInspect");
+		setSize(54);
 		backPackInventory = inventory;
 	}
 
@@ -49,8 +47,6 @@ public final class BackpackInspectMenu extends Menu {
 
 	@Override
 	protected void onMenuClose(Player player, Inventory inventory) {
-		BackpackData.from(player.getInventory().getItemInOffHand().getItemMeta().getPersistentDataContainer().get(BackpackItem.getInstance().getKey(), PersistentDataType.STRING)).setBackPackInventory(inventory);
-
 	}
 
 	@Override

@@ -3,9 +3,8 @@
 # !-----------------------------------------------------------------------------------------------!
 #
 #   The localization/ folder stores various localization files. Use the suggested naming
-#   convention message_LANGUAGE.yml and then the "SimpleLocalization" or the "Lang" class to
-#   use this file.
-#
+#   convention message_LANGUAGE.yml when creating forks of this.
+
 #   1) COLOR CODES are supported with the '&' character.
 #      - For usage, see http://minecraftwiki.net/wiki/Formatting_codes
 #      - When you use them, place quotes around the message like this: "Hello &cworld."
@@ -14,22 +13,29 @@
 #   2) TO HIDE any message, set it to 'none'.
 #
 #   3) For UNICODE CHARACTERS (smileys, symbols, ..), save the file in UTF-8 encoding. See
-#      - https://github.com/${author}/${project.name}/wiki/Use-Right-Encoding
 #
 #   4) JSON is supported. Prepend the message with [JSON].
 #
 #   5) JAVASCRIPT NOTICE: Some of our messages are just-in-time compiled with JavaScript.
-#      Those typically have variables such as "self" inside of them. IF YOU CANNOT CODE
+#      Those typically have variables such as "self" inside them. IF YOU CANNOT CODE
 #      in JavaScript, be extra careful and do not remove () brackets or the variables!
 #
 # !-----------------------------------------------------------------------------------------------!
 
+Backpack:
+  itemName: "&e&lBackpack"
+  itemLore:
+    - ""
+    - "&7Must be in your &c&nOFF-HAND&7 and your main hand must be empty."
+    - "&7To open your backpack perform the following actions:"
+    - "&c&nSHIFT&r&7 + &c&nRIGHT-CLICK&r&7 on a block."
+    - ""
+    - "&7UUID: &c&n{uuid}"
+
 # -------------------------------------------------------------------------------------------------
 # Messages related to commands
 # -------------------------------------------------------------------------------------------------
-Commands: 
-  # true = https://i.imgur.com/us88BCT.png
-  # false = https://i.imgur.com/N7jLu7v.png
+Commands:
   Simple_Help_Design: false
   Error: "&4&lOups! &cThe command failed :( Check the console and report the error."
   Header_No_Subcommands: "&cThere are no arguments for this command."
@@ -72,7 +78,7 @@ Commands:
   Reload_File_Load_Error: "&4Oups, &cthere was a problem loading files from your disk! See the console for more information. {plugin_name} has not been reloaded."
   Debug_Description: "ZIP your settings for reporting bugs."
   Debug_Preparing: "&6Preparing debug log..."
-  Debug_Success: "&2Successfuly copied {amount} file(s) to debug.zip. Your sensitive MySQL information has been removed from yml files. Please upload it via ufile.io and send it to us for review."
+  Debug_Success: "&2Successfuly copied {amount} file(s) to debug.zip. Please upload it via ufile.io and send it to us for review via the discord server."
   Debug_Copy_Fail: "&cCopying files failed on file {file} and it was stopped. See console for more information."
   Debug_Zip_Fail: "&cCreating a ZIP of your files failed, see console for more information. Please ZIP debug/ folder and send it to us via ufile.io manually."
   Perms_Description: "List all permissions the plugin has."
@@ -88,7 +94,7 @@ Commands:
   Perms_No: "&cno"
 
 # -------------------------------------------------------------------------------------------------
-# Messages related to paginator splitting command help into multiple pages
+# Messages related to pagination splitting command help into multiple pages
 # -------------------------------------------------------------------------------------------------
 Pages:
   No_Page_Number: "&cPlease specify the page number for this command."

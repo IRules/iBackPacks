@@ -1,11 +1,12 @@
 # -------------------------------------------------------------------------------------------------
 # Backpack settings
-# size - The size of the backpack. Changing this to smaller values will corrupt bigger backpacks.
+# size - The size of the backpack. Changing this will corrupt existing backpacks.
 # craftable - If the backpack can be crafted.
 # -------------------------------------------------------------------------------------------------
 Backpacks:
-  size: 6 * 9
+  size: 54
   craftable: true
+  modelData: 1
 
 # -------------------------------------------------------------------------------------------------
 # The prefix used in front of most chat or console messages.

@@ -1,9 +1,8 @@
 package net.irules.ibackpacks.menu;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
 import net.irules.ibackpacks.model.BackpackItem;
 import net.irules.ibackpacks.settings.BackpackData;
+import net.irules.ibackpacks.settings.Settings;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -12,14 +11,36 @@ import org.mineacademy.fo.menu.Menu;
 import org.mineacademy.fo.menu.model.MenuClickLocation;
 
 import javax.annotation.Nullable;
+
 public final class BackpackMenu extends Menu {
 
 	private final Inventory backPackInventory;
+	private final String resourcePackChar;
 
 	public BackpackMenu(Inventory inventory) {
-		setTitle("&e&lBackpack");
-		setSize(9 * 6);
 		backPackInventory = inventory;
+		switch (Settings.BackPackSettings.BACKPACK_SIZE) {
+			case 54:
+				resourcePackChar = "鸷";
+				break;
+			case 45:
+				resourcePackChar = "幔";
+				break;
+			case 36:
+				resourcePackChar = "挚";
+				break;
+			case 27:
+				resourcePackChar = "抬";
+				break;
+			case 18:
+				resourcePackChar = "撼";
+				break;
+			default:
+				resourcePackChar = "护";
+				break;
+		}
+		setTitle("ϰϰϰϰϰϰϰϰ" + "&f" + resourcePackChar);
+		setSize(Settings.BackPackSettings.BACKPACK_SIZE);
 	}
 
 	/**
@@ -56,6 +77,6 @@ public final class BackpackMenu extends Menu {
 
 	@Override
 	protected boolean isActionAllowed(MenuClickLocation location, int slot, @Nullable ItemStack clicked, @Nullable ItemStack cursor) {
-		return true;
+		return clicked == null || !clicked.getItemMeta().getPersistentDataContainer().has(BackpackItem.getInstance().getKey(), PersistentDataType.STRING);
 	}
 }

@@ -34,7 +34,7 @@ public final class BackpackOpenListener extends SimpleListener<PlayerInteractEve
 
 	/**
 	 * Create a new listener, registered automatically
-	 * We use monitor priority to make sure we are the last to listen to this event, and we can not interfere with it.
+	 * We use monitor priority to make sure we are the last to listen to this event.
 	 */
 	private BackpackOpenListener() {
 		super(PlayerInteractEvent.class, EventPriority.MONITOR, true);
@@ -46,11 +46,14 @@ public final class BackpackOpenListener extends SimpleListener<PlayerInteractEve
 	@Override
 	public void execute(PlayerInteractEvent event) {
 		final Player player = event.getPlayer();
+		if (event.getItem() != null && event.getItem().getItemMeta().getPersistentDataContainer().has(BackpackItem.getInstance().getKey(), PersistentDataType.STRING)) {
+			event.setCancelled(true);
+		}
 		// See how complicated it is to check for everything we need? Too many checks for my liking, but whatever.
 		if (event.getAction() == Action.RIGHT_CLICK_BLOCK && player.isSneaking()
 				&& event.getHand() == EquipmentSlot.OFF_HAND
 				&& event.getItem() != null
-				&& event.getItem().getType() == CompMaterial.FEATHER.getMaterial()
+				&& event.getItem().getType() == CompMaterial.CHEST.getMaterial()
 				&& player.hasPermission(Permissions.Backpacks.OPEN)
 				&& player.getInventory().getItemInMainHand().getType() == CompMaterial.AIR.getMaterial()) {
 			PersistentDataContainer container = player.getInventory().getItemInOffHand().getItemMeta().getPersistentDataContainer();

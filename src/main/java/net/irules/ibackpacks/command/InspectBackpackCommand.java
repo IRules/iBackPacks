@@ -18,7 +18,6 @@ public class InspectBackpackCommand extends SimpleSubCommand {
 		setPermission(permission);
 		setUsage("<UUID>");
 	}
-
 	@Override
 	protected void onCommand() {
 		checkConsole();

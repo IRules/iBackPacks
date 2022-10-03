@@ -29,6 +29,7 @@ public final class Settings extends SimpleSettings {
 
 		public static Integer BACKPACK_SIZE;
 		public static Boolean BACKPACK_CRAFTABLE;
+		public static Integer BACKPACK_MODELDATA;
 
 		/*
 		 * Automatically called method when we load settings.yml to load values in this subclass
@@ -38,6 +39,7 @@ public final class Settings extends SimpleSettings {
 
 			BACKPACK_SIZE = getInteger("size", 54);
 			BACKPACK_CRAFTABLE = getBoolean("craftable");
+			BACKPACK_MODELDATA = getInteger("modelData", 1);
 		}
 	}
 

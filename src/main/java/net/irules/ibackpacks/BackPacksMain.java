@@ -6,14 +6,13 @@ import org.mineacademy.fo.plugin.SimplePlugin;
 
 /**
  * Primary class of this plugin, extends {@link SimplePlugin}
- *
+ * <p>
  * We use Foundation for fast and efficient development process.
  */
 public final class BackPacksMain extends SimplePlugin {
 
 	/**
 	 * Automatically perform login ONCE when the plugin starts.
-
 	 *
 	 * @see org.mineacademy.fo.plugin.SimplePlugin#onPluginStart()
 	 */
@@ -29,7 +28,8 @@ public final class BackPacksMain extends SimplePlugin {
 	 */
 	@Override
 	protected void onReloadablesStart() {
-		if(Settings.BackPackSettings.BACKPACK_CRAFTABLE) {
+		if (Settings.BackPackSettings.BACKPACK_CRAFTABLE) {
+			BackpackCrafting.getInstance().unregister();
 			BackpackCrafting.getInstance().register();
 		} else {
 			BackpackCrafting.getInstance().unregister();

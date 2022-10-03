@@ -2,6 +2,7 @@ package net.irules.ibackpacks.settings;
 
 import lombok.*;
 import net.irules.ibackpacks.utils.Base64;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.mineacademy.fo.collection.SerializedMap;
@@ -89,14 +90,11 @@ public class BackpackData extends YamlConfig {
 
 		if (data == null) {
 			data = new BackpackData(uuid);
+			data.setBackPackInventory(Bukkit.createInventory(null, 54, "Backpack"));
 
 			backPackDataMap.put(uuid, data);
 		}
 
 		return data;
-	}
-
-	public static void remove(Player player) {
-		backPackDataMap.remove(uuid);
 	}
 }
